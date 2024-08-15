@@ -17,7 +17,7 @@ namespace ProblematicProblem
         static void Main(string[] args)
         {
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
-            cont = Console.ReadLine().ToLower() == "yes";  // Use the class-level 'cont' variable
+            cont = Console.ReadLine().ToLower() == "yes";
             Console.WriteLine();
 
             Console.Write("We are going to need your information first! What is your name? ");
@@ -83,7 +83,8 @@ namespace ProblematicProblem
                     randomNumber = rng.Next(activities.Count);
                     randomActivity = activities[randomNumber];
                 }
-                Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
+                // Fixing the placement of userName and randomActivity in the output
+                Console.Write($"Ah got it, {userName}! Your random activity is: {randomActivity}. Is this ok or do you want to grab another activity? Keep/Redo: ");
                 string userResponse = Console.ReadLine().ToLower();
                 cont = userResponse == "redo";
             }
